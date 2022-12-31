@@ -15,4 +15,3 @@ var lengthOfLastWord = function(s) {
     }
     return splittedArray[len].length;
  };
- console.log(lengthOfLastWord("hello world  "))
