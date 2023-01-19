@@ -1,3 +1,4 @@
+// leetcode unsoulved soution of the question 2
 // var addTwoNumbers = function(l1, l2) {
 //     let j = 0;
 //     let c =[0]
