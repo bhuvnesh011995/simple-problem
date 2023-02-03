@@ -19,7 +19,6 @@ function merge(intervals) {
                     intervals[k] = intervals[k+1];
                     if(k==intervals.length-1){
                         intervals.pop();
-                        j--;
                         break;
                     }
                 }
