@@ -1,4 +1,4 @@
-// leetcode solution of the question 1333
+// leetcode solution of the question 1333 need improvement
 var filterRestaurants = function(restaurants, veganFriendly, maxPrice, maxDistance) {
     filterRes();
     let ans =[];
