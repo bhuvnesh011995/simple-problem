@@ -1,15 +1,13 @@
 // leetcode solution of the question 413
 var numberOfArithmeticSlices = function(nums) {
     let len = nums.length-1;
-    let count = 2;
+    let count = 0
     let NoOfSubArr = 0;
-    let diff = 0;
-    let subEle = 1;
     for(i =1;i<len;i++){
         if(nums[i]-nums[i-1]==nums[i+1]-nums[i]){
-            NoOfSubArr = ++count + NoOfSubArr-2;
+            NoOfSubArr = ++count + NoOfSubArr
         }else{
-            count = 2;
+            count = 0;
         }
     }
     return NoOfSubArr;
