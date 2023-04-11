@@ -54,23 +54,32 @@
 // }
 
 // not good as previous one bc too many conditions
-function removeStars(s){
-    let count = 0, str = false,ans = [];
-    for(i=0;i<s.length;i++)
-    if(s[i]!="*"){
-        if(str){
-            ans.length=ans.length-count;
-            str = false, count = 0;
-        }
-        ans.push(s[i]);
-    }else{
-        str = true;
-        count++;
-    }
-    if(str){
-        ans.length = ans.length-count;
-    }
-    return ans.join("")
-}
+// function removeStars(s){
+//     let count = 0, str = false,ans = [];
+//     for(i=0;i<s.length;i++)
+//     if(s[i]!="*"){
+//         if(str){
+//             ans.length=ans.length-count;
+//             str = false, count = 0;
+//         }
+//         ans.push(s[i]);
+//     }else{
+//         str = true;
+//         count++;
+//     }
+//     if(str){
+//         ans.length = ans.length-count;
+//     }
+//     return ans.join("")
+// }
 
+
+function removeStars(s){
+    let ans = ''
+    for(i=0;i<s.length;i++){
+        if(s[i]=="*") ans = ans.slice(0,-1);
+        else ans = ans + s[i]
+    }
+    return ans
+}
 console.log(removeStars("leet**cod*e"))
