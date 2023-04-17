@@ -1,50 +1,56 @@
-// leetcode unsoulved soution of the question 2
-// var addTwoNumbers = function(l1, l2) {
-//     let j = 0;
-//     let c =[0]
-//     if(l1.length < l2.length){
-//         let b;
-//         b=l1;
-//         l1 = l2;
-//         l2 =b;
-//     }
-//     for(i=0;i<l1.length;i++){
-//         if(l2[j]==undefined){
-//             l2[j]=0;
-//         }
-//         c[j] = l2[j]+l1[j];
-//         if(c[j]>9){
+// leetcode soution of the question 2
 
-//             let a = Math.trunc(c[j]/10);
-//             c[j]= c[j]%10;
-//             l2[j+1] = a+l2[j+1]
-//         }
-//         j++
-//     }
-//     return c;
-// };
+ class LinkedList{
+    constructor(){
+        this.head = null;
+        this.size = 0;
+    }
+}
+class Node{
+    constructor(d){
+        this.val = d;
+        this.next = null;
+    }
+}
+let linkList1 = new LinkedList();
+let linkList2 = new LinkedList();
+let l1 = [2,4,3]
+let l2 = [2,6,4];
+
+
+function addEleement(li,list){
+
+    li.head = new Node(list[0]),li.size++
+    let temp = li.head;
+   for(i=1;i<l1.length;i++){
+    let newNode = new Node(list[i]);li.size++;
+        temp.next = newNode
+        temp = newNode;
+    }
+    return
+} 
+
+addEleement(linkList1,l1)
+addEleement(linkList2,l2)
+console.log(linkList1);
+console.log(linkList2)
+
+
 
 
 var addTwoNumbers = function(l1, l2) {
-    if(l1.length>l2.length){
-        a= l1;
-        l1=l2;
-        l2=a;
+    let result = new ListNode(0);
+    let curr = result;
+    let rem = false;
+    while(l1||l2||rem){
+        let sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + (rem ? 1 : 0)
+        rem = false;
+        sum>9? (curr.next  = new ListNode(sum%10), rem = true) : curr.next = new ListNode(sum);
+        curr = curr.next;
+        l1 = l1 ? l1.next : null
+        l2 = l2 ? l2.next : null;
     }
-   for(i=0;i<l2.length;i++){
-        if(l1[i]==undefined){
-            l1[i]=0
-        }
-        l1[i] = l1[i]+l2[i];
-        if(l1[i]>9){
-            let b = l1[i];
-            l1[i] = l1[i]%10;
-            if(l2[i+1]==undefined){
-                l2[i+1]=0
-            }
-            l2[i+1] = Math.floor(b/10)+ l2[i+1]
-        }
+    return result.next;
 
-   }
-return l1;
-};console.log(addTwoNumbers([1,4,3,5],[2,6,4]));
+};
+
