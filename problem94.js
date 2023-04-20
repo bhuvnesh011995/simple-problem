@@ -12,12 +12,14 @@
 
 // leetcode solution of the question 21
 
+let arr = [1,2,4]
+let arr2 = [1,3,4]
+
+
 function ListNode(val, next) {
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
 }
-let arr = [1,2,4]
-let arr2 = [1,3,4]
 
 function convertToLinkedList(arr){
     let head = new ListNode(0)
@@ -27,10 +29,11 @@ arr.map((e)=>{
    temp.next = new ListNode(e)
    temp = temp.next;
 })
-return head = head.next;
+return head.next;
 }
 let list1 = convertToLinkedList(arr)
 let list2 = convertToLinkedList(arr2)
+console.log(JSON.stringify(list1))
 
 
 var mergeTwoLists = function(list1, list2) {
@@ -53,4 +56,4 @@ var mergeTwoLists = function(list1, list2) {
     return head.next
 };
 
-console.log(mergeTwoLists(list1,list2))
+// console.log(mergeTwoLists(list1,list2))
