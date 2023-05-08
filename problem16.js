@@ -18,7 +18,7 @@
 
 // leetcode solution of question  80 
 
-var removeDuplicates = function(nums) {
+/*var removeDuplicates = function(nums) {
     for(i=0;i<nums.length;i++){
             if(nums[i]==nums[i+2]){
                 let j = i+2
@@ -30,5 +30,26 @@ var removeDuplicates = function(nums) {
 
         }
     return nums.length
-};
-console.log(removeDuplicates([0,0,1,1,1,1,2,3,3]))
+};*/
+/*var removeDuplicates = (nums)=>{
+let i=0,j=0;
+for(i;i<nums.length;i++){
+    if(nums[i]!=nums[j]&&i-j>2){
+        nums.splice(j+2,i-j-2);
+        j=i;
+    }else if(nums[i]!=nums[j]) j=i;
+    if(i==nums.length-1&&i-j>2) nums.splice(j+2,i-j-1)
+}
+return nums
+}*/
+
+var removeDuplicates = (nums)=>{
+    let l=2,r=2;
+    while(r<nums.length){
+        if(nums[r]===nums[l-1]&&nums[r]===nums[l-2]) r++
+        else nums[l++]=nums[r++]
+    }
+    while(nums[nums.length-1]===nums[nums.length-3]) nums.pop()
+    return nums
+}
+console.log(removeDuplicates([1,2,2]))

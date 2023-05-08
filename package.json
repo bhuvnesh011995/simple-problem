@@ -1,0 +1,22 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "convertToListNode.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhuvnesh011995/simple-problem.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhuvnesh011995/simple-problem/issues"
+  },
+  "homepage": "https://github.com/bhuvnesh011995/simple-problem#readme",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
